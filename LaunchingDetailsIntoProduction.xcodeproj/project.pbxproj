@@ -17,10 +17,18 @@
 		11818F7E24274B8200C54C63 /* PetrovSokolitsyn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F7D24274B8200C54C63 /* PetrovSokolitsyn.swift */; };
 		11818F8824274C8E00C54C63 /* JohnsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F8724274C8E00C54C63 /* JohnsonTests.swift */; };
 		11818F9024274DDE00C54C63 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F8F24274DDE00C54C63 /* Detail.swift */; };
+		11818F982428EBDD00C54C63 /* PetrovSokolycinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F972428EBDD00C54C63 /* PetrovSokolycinTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		11818F8A24274C8E00C54C63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11818F5924274ACA00C54C63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11818F6024274ACA00C54C63;
+			remoteInfo = LaunchingDetailsIntoProduction;
+		};
+		11818F9A2428EBDD00C54C63 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 11818F5924274ACA00C54C63 /* Project object */;
 			proxyType = 1;
@@ -44,6 +52,9 @@
 		11818F8724274C8E00C54C63 /* JohnsonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JohnsonTests.swift; sourceTree = "<group>"; };
 		11818F8924274C8E00C54C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11818F8F24274DDE00C54C63 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		11818F952428EBDD00C54C63 /* PetrovSokolycinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetrovSokolycinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11818F972428EBDD00C54C63 /* PetrovSokolycinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetrovSokolycinTests.swift; sourceTree = "<group>"; };
+		11818F992428EBDD00C54C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +72,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11818F922428EBDD00C54C63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -69,6 +87,7 @@
 			children = (
 				11818F6324274ACA00C54C63 /* LaunchingDetailsIntoProduction */,
 				11818F8624274C8E00C54C63 /* JohnsonTests */,
+				11818F962428EBDD00C54C63 /* PetrovSokolycinTests */,
 				11818F6224274ACA00C54C63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +97,7 @@
 			children = (
 				11818F6124274ACA00C54C63 /* LaunchingDetailsIntoProduction.app */,
 				11818F8524274C8E00C54C63 /* JohnsonTests.xctest */,
+				11818F952428EBDD00C54C63 /* PetrovSokolycinTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +134,15 @@
 				11818F8924274C8E00C54C63 /* Info.plist */,
 			);
 			path = JohnsonTests;
+			sourceTree = "<group>";
+		};
+		11818F962428EBDD00C54C63 /* PetrovSokolycinTests */ = {
+			isa = PBXGroup;
+			children = (
+				11818F972428EBDD00C54C63 /* PetrovSokolycinTests.swift */,
+				11818F992428EBDD00C54C63 /* Info.plist */,
+			);
+			path = PetrovSokolycinTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +183,24 @@
 			productReference = 11818F8524274C8E00C54C63 /* JohnsonTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		11818F942428EBDD00C54C63 /* PetrovSokolycinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11818F9C2428EBDD00C54C63 /* Build configuration list for PBXNativeTarget "PetrovSokolycinTests" */;
+			buildPhases = (
+				11818F912428EBDD00C54C63 /* Sources */,
+				11818F922428EBDD00C54C63 /* Frameworks */,
+				11818F932428EBDD00C54C63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11818F9B2428EBDD00C54C63 /* PBXTargetDependency */,
+			);
+			name = PetrovSokolycinTests;
+			productName = PetrovSokolycinTests;
+			productReference = 11818F952428EBDD00C54C63 /* PetrovSokolycinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -168,6 +215,10 @@
 						CreatedOnToolsVersion = 11.3.1;
 					};
 					11818F8424274C8E00C54C63 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 11818F6024274ACA00C54C63;
+					};
+					11818F942428EBDD00C54C63 = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = 11818F6024274ACA00C54C63;
 					};
@@ -188,6 +239,7 @@
 			targets = (
 				11818F6024274ACA00C54C63 /* LaunchingDetailsIntoProduction */,
 				11818F8424274C8E00C54C63 /* JohnsonTests */,
+				11818F942428EBDD00C54C63 /* PetrovSokolycinTests */,
 			);
 		};
 /* End PBXProject section */
@@ -204,6 +256,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		11818F8324274C8E00C54C63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11818F932428EBDD00C54C63 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -234,6 +293,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11818F912428EBDD00C54C63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11818F982428EBDD00C54C63 /* PetrovSokolycinTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -241,6 +308,11 @@
 			isa = PBXTargetDependency;
 			target = 11818F6024274ACA00C54C63 /* LaunchingDetailsIntoProduction */;
 			targetProxy = 11818F8A24274C8E00C54C63 /* PBXContainerItemProxy */;
+		};
+		11818F9B2428EBDD00C54C63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11818F6024274ACA00C54C63 /* LaunchingDetailsIntoProduction */;
+			targetProxy = 11818F9A2428EBDD00C54C63 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -454,6 +526,46 @@
 			};
 			name = Release;
 		};
+		11818F9D2428EBDD00C54C63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YG4U6S73S9;
+				INFOPLIST_FILE = PetrovSokolycinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sanyakam.PetrovSokolycinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LaunchingDetailsIntoProduction.app/LaunchingDetailsIntoProduction";
+			};
+			name = Debug;
+		};
+		11818F9E2428EBDD00C54C63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YG4U6S73S9;
+				INFOPLIST_FILE = PetrovSokolycinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sanyakam.PetrovSokolycinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LaunchingDetailsIntoProduction.app/LaunchingDetailsIntoProduction";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -480,6 +592,15 @@
 			buildConfigurations = (
 				11818F8D24274C8E00C54C63 /* Debug */,
 				11818F8E24274C8E00C54C63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11818F9C2428EBDD00C54C63 /* Build configuration list for PBXNativeTarget "PetrovSokolycinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11818F9D2428EBDD00C54C63 /* Debug */,
+				11818F9E2428EBDD00C54C63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
