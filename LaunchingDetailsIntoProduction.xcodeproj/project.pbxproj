@@ -20,6 +20,7 @@
 		11818F982428EBDD00C54C63 /* PetrovSokolycinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F972428EBDD00C54C63 /* PetrovSokolycinTests.swift */; };
 		11818FA02428ECA700C54C63 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F9F2428ECA700C54C63 /* DataLoader.swift */; };
 		11818FA82428F38600C54C63 /* DataLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818FA72428F38600C54C63 /* DataLoaderTests.swift */; };
+		11818FB12428F59900C54C63 /* GanttLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818FB02428F59900C54C63 /* GanttLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		11818FA52428F38600C54C63 /* DataLoaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataLoaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11818FA72428F38600C54C63 /* DataLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoaderTests.swift; sourceTree = "<group>"; };
 		11818FA92428F38600C54C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11818FB02428F59900C54C63 /* GanttLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		11818F6324274ACA00C54C63 /* LaunchingDetailsIntoProduction */ = {
 			isa = PBXGroup;
 			children = (
+				11818FAF2428F57200C54C63 /* Layout */,
 				11818F7A24274B4D00C54C63 /* Algorithms */,
 				11818F6424274ACA00C54C63 /* AppDelegate.swift */,
 				11818F6624274ACA00C54C63 /* SceneDelegate.swift */,
@@ -175,6 +178,14 @@
 				11818FA92428F38600C54C63 /* Info.plist */,
 			);
 			path = DataLoaderTests;
+			sourceTree = "<group>";
+		};
+		11818FAF2428F57200C54C63 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				11818FB02428F59900C54C63 /* GanttLayout.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11818FB12428F59900C54C63 /* GanttLayout.swift in Sources */,
 				11818F6924274ACA00C54C63 /* ViewController.swift in Sources */,
 				11818F6524274ACA00C54C63 /* AppDelegate.swift in Sources */,
 				11818FA02428ECA700C54C63 /* DataLoader.swift in Sources */,
