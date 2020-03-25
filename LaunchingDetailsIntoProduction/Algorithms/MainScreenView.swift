@@ -14,6 +14,14 @@ struct MainScreenView: View {
     @State private var selectedAlgorithm = 0
     @State private var zoomValue: Float = 1
     @State private var lenghtOfProductionTime: Int = 0
+    @State private var items: [Detail] = [
+        .init(1, timeOnMachines: [4, 5]),
+        .init(2, timeOnMachines: [4, 1]),
+        .init(3, timeOnMachines: [30, 4]),
+        .init(4, timeOnMachines: [6, 30]),
+        .init(5, timeOnMachines: [2, 3]),
+    ]
+     
     
     var body: some View {
         VStack(spacing: 0) {
@@ -50,6 +58,10 @@ struct MainScreenView: View {
                 
                 Text("Длина цикла: \(lenghtOfProductionTime)")
             }
+            
+            
+            GanttCollectionView(items: $items, zoomValue: $zoomValue)
+            
             
         }.padding()
     }

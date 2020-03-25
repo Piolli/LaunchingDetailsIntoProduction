@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 class GanttLayout: UICollectionViewLayout {
-    
-    typealias Algorithm = ([Detail]) -> [Detail]
 
     enum DefaultLayoutMetrics {
         static var timeHeaderHeight = CGFloat(50)
@@ -32,7 +30,11 @@ class GanttLayout: UICollectionViewLayout {
     }
     
     var cache: [IndexPath : UICollectionViewLayoutAttributes] = [:]
-    var items: [[Detail]] = []
+    var items: [[Detail]] = [] {
+        didSet {
+            invalidateLayout()
+        }
+    }
     
     var layoutMetrics: LayoutMetrics = .init() {
         didSet {
@@ -40,37 +42,9 @@ class GanttLayout: UICollectionViewLayout {
         }
     }
     
-    init(details: [Detail], algorithm: Algorithm) {
+    init(items: [[Detail]]) {
         super.init()
-        items = prepareItems(items: details, algorithm: algorithm)
-    }
-    
-    /// Prepare items for displaying
-    /// - Parameters:
-    ///   - items: Array of `Detail`
-    ///   - algorithm: The algorithm for reordering items
-    func prepareItems(items: [Detail], algorithm: Algorithm) -> [[Detail]]  {
-        var colors: [UIColor] = [UIColor.red, UIColor.green, UIColor.gray, UIColor.yellow, .darkGray, .cyan, .link, .purple, .orange, .magenta, .brown]
-        
-        var items = algorithm(items)
-        
-        //redistribution colors
-        for i in items.indices {
-            items[i].color = colors.popLast()!
-        }
-        
-        var rearrange = Array.init(repeating: items, count: items[0].timeOnMachines.count)
-        
-        for i in 1..<rearrange.count {
-            for (j, detailInRow) in rearrange[i].enumerated() {
-                let topRow = rearrange[i-1]
-                if i > 0 && j == 0 {
-                    rearrange[i][j].leftOffset = topRow[0].timeOnMachines[i-1] + topRow[0].leftOffset
-                }
-            }
-        }
-        
-        return rearrange
+        self.items = items
     }
 
     required init?(coder: NSCoder) {
@@ -132,6 +106,11 @@ class GanttLayout: UICollectionViewLayout {
 
     override var collectionViewContentSize: CGSize {
         //compute estimated width of max time
+        let sectionsCount = collectionView!.numberOfSections
+        if sectionsCount == 0 {
+            return .zero
+        }
+
         let width = CGFloat(5000)
         
         let itemsCount = collectionView!.numberOfItems(inSection: 0)

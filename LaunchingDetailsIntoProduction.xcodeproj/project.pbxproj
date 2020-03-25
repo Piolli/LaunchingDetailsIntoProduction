@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		114D4BA4242B314C009C58C4 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D4BA3242B314C009C58C4 /* MainScreenView.swift */; };
+		115EAC6D242B452B00DA8172 /* GanttCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115EAC6C242B452B00DA8172 /* GanttCollectionView.swift */; };
+		115EAC6F242B467000DA8172 /* UIGanttCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115EAC6E242B467000DA8172 /* UIGanttCollectionView.swift */; };
+		115EAC71242B8A8400DA8172 /* GanttCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115EAC70242B8A8400DA8172 /* GanttCell.swift */; };
 		11818F6524274ACA00C54C63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F6424274ACA00C54C63 /* AppDelegate.swift */; };
 		11818F6724274ACA00C54C63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F6624274ACA00C54C63 /* SceneDelegate.swift */; };
 		11818F6924274ACA00C54C63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F6824274ACA00C54C63 /* ViewController.swift */; };
@@ -50,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		114D4BA3242B314C009C58C4 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainScreenView.swift; path = Algorithms/MainScreenView.swift; sourceTree = "<group>"; };
+		115EAC6C242B452B00DA8172 /* GanttCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttCollectionView.swift; sourceTree = "<group>"; };
+		115EAC6E242B467000DA8172 /* UIGanttCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGanttCollectionView.swift; sourceTree = "<group>"; };
+		115EAC70242B8A8400DA8172 /* GanttCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttCell.swift; sourceTree = "<group>"; };
 		11818F6124274ACA00C54C63 /* LaunchingDetailsIntoProduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchingDetailsIntoProduction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11818F6424274ACA00C54C63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11818F6624274ACA00C54C63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +112,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		115EAC72242B8B2B00DA8172 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				115EAC6C242B452B00DA8172 /* GanttCollectionView.swift */,
+				115EAC6E242B467000DA8172 /* UIGanttCollectionView.swift */,
+				115EAC70242B8A8400DA8172 /* GanttCell.swift */,
+				11818FAF2428F57200C54C63 /* Layout */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		11818F5824274ACA00C54C63 = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +148,7 @@
 		11818F6324274ACA00C54C63 /* LaunchingDetailsIntoProduction */ = {
 			isa = PBXGroup;
 			children = (
-				11818FAF2428F57200C54C63 /* Layout */,
+				115EAC72242B8B2B00DA8172 /* CollectionView */,
 				11818F7A24274B4D00C54C63 /* Algorithms */,
 				11818F6424274ACA00C54C63 /* AppDelegate.swift */,
 				11818F6624274ACA00C54C63 /* SceneDelegate.swift */,
@@ -352,13 +369,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				115EAC71242B8A8400DA8172 /* GanttCell.swift in Sources */,
 				11818FB12428F59900C54C63 /* GanttLayout.swift in Sources */,
+				115EAC6D242B452B00DA8172 /* GanttCollectionView.swift in Sources */,
 				11818F6924274ACA00C54C63 /* ViewController.swift in Sources */,
 				11818F6524274ACA00C54C63 /* AppDelegate.swift in Sources */,
 				11818FA02428ECA700C54C63 /* DataLoader.swift in Sources */,
 				114D4BA4242B314C009C58C4 /* MainScreenView.swift in Sources */,
 				11818F9024274DDE00C54C63 /* Detail.swift in Sources */,
 				11818F6724274ACA00C54C63 /* SceneDelegate.swift in Sources */,
+				115EAC6F242B467000DA8172 /* UIGanttCollectionView.swift in Sources */,
 				11818F7C24274B6F00C54C63 /* Johnson.swift in Sources */,
 				11818F7E24274B8200C54C63 /* PetrovSokolitsyn.swift in Sources */,
 			);
