@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		114D4BA4242B314C009C58C4 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D4BA3242B314C009C58C4 /* MainScreenView.swift */; };
 		11818F6524274ACA00C54C63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F6424274ACA00C54C63 /* AppDelegate.swift */; };
 		11818F6724274ACA00C54C63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F6624274ACA00C54C63 /* SceneDelegate.swift */; };
 		11818F6924274ACA00C54C63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F6824274ACA00C54C63 /* ViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		114D4BA3242B314C009C58C4 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainScreenView.swift; path = Algorithms/MainScreenView.swift; sourceTree = "<group>"; };
 		11818F6124274ACA00C54C63 /* LaunchingDetailsIntoProduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchingDetailsIntoProduction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11818F6424274ACA00C54C63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11818F6624274ACA00C54C63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				11818F7A24274B4D00C54C63 /* Algorithms */,
 				11818F6424274ACA00C54C63 /* AppDelegate.swift */,
 				11818F6624274ACA00C54C63 /* SceneDelegate.swift */,
+				114D4BA3242B314C009C58C4 /* MainScreenView.swift */,
 				11818F6824274ACA00C54C63 /* ViewController.swift */,
 				11818F6A24274ACA00C54C63 /* Main.storyboard */,
 				11818F6D24274ACD00C54C63 /* Assets.xcassets */,
@@ -353,6 +356,7 @@
 				11818F6924274ACA00C54C63 /* ViewController.swift in Sources */,
 				11818F6524274ACA00C54C63 /* AppDelegate.swift in Sources */,
 				11818FA02428ECA700C54C63 /* DataLoader.swift in Sources */,
+				114D4BA4242B314C009C58C4 /* MainScreenView.swift in Sources */,
 				11818F9024274DDE00C54C63 /* Detail.swift in Sources */,
 				11818F6724274ACA00C54C63 /* SceneDelegate.swift in Sources */,
 				11818F7C24274B6F00C54C63 /* Johnson.swift in Sources */,
