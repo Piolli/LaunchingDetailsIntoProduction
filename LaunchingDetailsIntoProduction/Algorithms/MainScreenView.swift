@@ -8,10 +8,11 @@
 
 import SwiftUI
 
+
 struct MainScreenView: View {
     
     @State private var isDefaultData = true
-    @State private var selectedAlgorithm = 0
+    @State private var selectedAlgorithmIndex: Int = 0
     @State private var zoomValue: Float = 1
     @State private var lenghtOfProductionTime: Int = 0
     @State private var items: [Detail] = [
@@ -21,7 +22,6 @@ struct MainScreenView: View {
         .init(4, timeOnMachines: [6, 30]),
         .init(5, timeOnMachines: [2, 3]),
     ]
-     
     
     var body: some View {
         VStack(spacing: 0) {
@@ -37,7 +37,7 @@ struct MainScreenView: View {
             
             
             ScrollView(.horizontal) {
-                Picker(selection: $selectedAlgorithm, label: Text("Выберите алгоритм")) {
+                Picker(selection: $selectedAlgorithmIndex, label: Text("Выберите алгоритм")) {
                     Text("Базовый").tag(0)
                     Text("Джонсон 1").tag(1)
                     Text("Джонсон 2").tag(2)
@@ -59,12 +59,11 @@ struct MainScreenView: View {
                 Text("Длина цикла: \(lenghtOfProductionTime)")
             }
             
-            
-            GanttCollectionView(items: $items, zoomValue: $zoomValue)
-            
+            GanttCollectionView(items: $items, zoomValue: $zoomValue, algorithmIndex: $selectedAlgorithmIndex)
             
         }.padding()
     }
+    
 }
 
 struct MainScreenView_Previews: PreviewProvider {

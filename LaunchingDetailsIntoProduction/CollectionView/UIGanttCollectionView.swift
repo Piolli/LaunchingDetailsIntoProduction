@@ -16,8 +16,7 @@ class UIGanttCollectionView: UICollectionView {
     
     var items: [Detail] = [] {
         didSet {
-            displayingItems = prepareItems(items: self.items, algorithm: reorderingAlgorithm)
-            ganttLayout.items = displayingItems
+            updateItems()
         }
     }
     
@@ -27,9 +26,19 @@ class UIGanttCollectionView: UICollectionView {
         }
     }
     
+    var reorderingAlgorithm: Algorithm = { $0 } {
+       didSet {
+            updateItems()
+       }
+    }
+    
+    func updateItems() {
+        displayingItems = prepareItems(items: self.items, algorithm: reorderingAlgorithm)
+        ganttLayout.items = displayingItems
+    }
+    
     private var displayingItems: [[Detail]] = []
     var ganttLayout: GanttLayout!
-    var reorderingAlgorithm: Algorithm = Johnson.Johnson1(items:)
     
     init(items: [Detail]) {
         super.init(frame: .zero, collectionViewLayout: UICollectionViewLayout())

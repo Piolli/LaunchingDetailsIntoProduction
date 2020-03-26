@@ -14,6 +14,7 @@ struct GanttCollectionView: UIViewRepresentable {
     
     @Binding var items: [Detail]
     @Binding var zoomValue: Float
+    @Binding var algorithmIndex: Int
     
     func makeUIView(context: UIViewRepresentableContext<GanttCollectionView>) -> UIGanttCollectionView {
         return UIGanttCollectionView(items: items)
@@ -22,6 +23,7 @@ struct GanttCollectionView: UIViewRepresentable {
     func updateUIView(_ uiView: UIGanttCollectionView, context: UIViewRepresentableContext<GanttCollectionView>) {
         uiView.items = items
         uiView.zoomValue = CGFloat(zoomValue)
+        uiView.reorderingAlgorithm = reorderingAlgorithms[algorithmIndex]
     }
     
 }

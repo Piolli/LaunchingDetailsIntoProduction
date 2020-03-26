@@ -9,6 +9,18 @@
 import Foundation
 import UIKit
 
+let reorderingAlgorithms: [UIGanttCollectionView.Algorithm] = [
+    { $0 }, //without order
+    Johnson.Johnson1(items:),
+    Johnson.Johnson2(items:),
+    Johnson.Johnson3(items:),
+    Johnson.Johnson4(items:),
+    Johnson.Johnson5(items:),
+    PetrovSokolitsyn.PetrovSokolitsyn1(items:),
+    PetrovSokolitsyn.PetrovSokolitsyn2(items:),
+    PetrovSokolitsyn.PetrovSokolitsyn3(items:)
+]
+
 class GanttLayout: UICollectionViewLayout {
 
     enum DefaultLayoutMetrics {
