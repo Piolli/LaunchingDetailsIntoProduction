@@ -41,7 +41,17 @@ class GanttLayout: UICollectionViewLayout {
         }
     }
     
+    ///Emit event if length of layout object did change
+    var lenghtOfProductionLineDidChange: ((CGFloat) -> Void)?
+    
+    var lengthOfProductionLine: CGFloat = 0 {
+        didSet {
+            lenghtOfProductionLineDidChange?(self.lengthOfProductionLine)
+        }
+    }
+    
     var cache: [IndexPath : UICollectionViewLayoutAttributes] = [:]
+    
     var items: [[Detail]] = [] {
         didSet {
             invalidateLayout()
@@ -64,6 +74,10 @@ class GanttLayout: UICollectionViewLayout {
     }
     
     override func prepare() {
+        if items.count == 0 {
+            print("Count of items is zero")
+            return
+        }
         var yOffsets: [CGFloat] = []
         for row in 0..<items.count {
             yOffsets.append(CGFloat(row) * layoutMetrics.rowHeight)
@@ -114,6 +128,10 @@ class GanttLayout: UICollectionViewLayout {
                 rowIndex += 1
             }
         }
+        
+        //Length Of Production Line is the last row's length divided on cell width
+        lengthOfProductionLine = round(xoffsets.last! / layoutMetrics.cellWidth)
+        
     }
 
     override var collectionViewContentSize: CGSize {

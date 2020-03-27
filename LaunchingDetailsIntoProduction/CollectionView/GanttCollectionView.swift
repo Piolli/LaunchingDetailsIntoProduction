@@ -15,9 +15,15 @@ struct GanttCollectionView: UIViewRepresentable {
     @Binding var items: [Detail]
     @Binding var zoomValue: Float
     @Binding var algorithmIndex: Int
+    let lenghtOfProductionTime: (CGFloat) -> Void
+    
     
     func makeUIView(context: UIViewRepresentableContext<GanttCollectionView>) -> UIGanttCollectionView {
-        return UIGanttCollectionView(items: items)
+        let ganttView = UIGanttCollectionView(items: items)
+        ganttView.ganttLayout.lenghtOfProductionLineDidChange = { length in
+            self.lenghtOfProductionTime(length)
+        }
+        return ganttView
     }
     
     func updateUIView(_ uiView: UIGanttCollectionView, context: UIViewRepresentableContext<GanttCollectionView>) {

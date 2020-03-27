@@ -14,7 +14,7 @@ struct MainScreenView: View {
     @State private var isDefaultData = true
     @State private var selectedAlgorithmIndex: Int = 0
     @State private var zoomValue: Float = 1
-    @State private var lenghtOfProductionTime: Int = 0
+    @State private var lenghtOfProductionLine: CGFloat = 0
     @State private var items: [Detail] = [
         .init(1, timeOnMachines: [4, 5]),
         .init(2, timeOnMachines: [4, 1]),
@@ -56,10 +56,12 @@ struct MainScreenView: View {
                     Slider(value: $zoomValue, in: (0.2)...3)
                 }.padding()
                 
-                Text("Длина цикла: \(lenghtOfProductionTime)")
+                Text("Длина цикла: \(lenghtOfProductionLine)")
             }
             
-            GanttCollectionView(items: $items, zoomValue: $zoomValue, algorithmIndex: $selectedAlgorithmIndex)
+            GanttCollectionView(items: $items, zoomValue: $zoomValue, algorithmIndex: $selectedAlgorithmIndex) { length in
+                self.lenghtOfProductionLine = length
+            }
             
         }.padding()
     }

@@ -12,7 +12,10 @@ class UIGanttCollectionView: UICollectionView {
 
     typealias Algorithm = ([Detail]) -> [Detail]
     
-    let cellIdentifier = "ganttCell"
+    private let cellIdentifier = "ganttCell"
+    private var displayingItems: [[Detail]] = []
+    
+    var ganttLayout: GanttLayout!
     
     var items: [Detail] = [] {
         didSet {
@@ -36,9 +39,6 @@ class UIGanttCollectionView: UICollectionView {
         displayingItems = prepareItems(items: self.items, algorithm: reorderingAlgorithm)
         ganttLayout.items = displayingItems
     }
-    
-    private var displayingItems: [[Detail]] = []
-    var ganttLayout: GanttLayout!
     
     init(items: [Detail]) {
         super.init(frame: .zero, collectionViewLayout: UICollectionViewLayout())
@@ -101,7 +101,7 @@ extension UIGanttCollectionView : UICollectionViewDataSource, UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! GanttCell
         let item = displayingItems[indexPath.row][indexPath.section]
         cell.backgroundColor = item.color
-        cell.addNumberOfTasks(text: "\(item.number) \(indexPath), \(item.timeOnMachines[indexPath.row])")
+        cell.addNumberOfTasks(text: "\(item.number), \(item.timeOnMachines[indexPath.row])")
         return cell
     }
     
