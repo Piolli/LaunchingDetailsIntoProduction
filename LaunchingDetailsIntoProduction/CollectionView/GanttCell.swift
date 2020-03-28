@@ -14,7 +14,7 @@ class GanttCell: UICollectionViewCell {
     let numberOfTask: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .headline)
+        label.font = .preferredFont(forTextStyle: .caption2)
         label.adjustsFontForContentSizeCategory = true
         return label
     }()

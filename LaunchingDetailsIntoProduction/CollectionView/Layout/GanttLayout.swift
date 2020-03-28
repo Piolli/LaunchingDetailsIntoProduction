@@ -130,7 +130,12 @@ class GanttLayout: UICollectionViewLayout {
         }
         
         //Length Of Production Line is the last row's length divided on cell width
-        lengthOfProductionLine = round(xoffsets.last! / layoutMetrics.cellWidth)
+        let newLength = round(xoffsets.last! / layoutMetrics.cellWidth)
+        lengthOfProductionLine = newLength
+        if newLength != lengthOfProductionLine {
+            invalidateLayout()
+        }
+        
         
     }
 
@@ -141,11 +146,9 @@ class GanttLayout: UICollectionViewLayout {
             return .zero
         }
 
-        let width = CGFloat(5000)
-        
+        let width = lengthOfProductionLine * layoutMetrics.cellWidth
         let itemsCount = collectionView!.numberOfItems(inSection: 0)
         let height = layoutMetrics.timeHeaderHeight + (layoutMetrics.rowHeight * CGFloat(itemsCount))
-//        let height = CGFloat(1000)
         
         return .init(width: width, height: height)
     }

@@ -38,6 +38,7 @@ class UIGanttCollectionView: UICollectionView {
     func updateItems() {
         displayingItems = prepareItems(items: self.items, algorithm: reorderingAlgorithm)
         ganttLayout.items = displayingItems
+        reloadData()
     }
     
     init(items: [Detail]) {

@@ -78,6 +78,7 @@
 		11818FA72428F38600C54C63 /* DataLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoaderTests.swift; sourceTree = "<group>"; };
 		11818FA92428F38600C54C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11818FB02428F59900C54C63 /* GanttLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttLayout.swift; sourceTree = "<group>"; };
+		11A22BC1242F857700D6FF52 /* LaunchingDetailsIntoProduction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaunchingDetailsIntoProduction.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +149,7 @@
 		11818F6324274ACA00C54C63 /* LaunchingDetailsIntoProduction */ = {
 			isa = PBXGroup;
 			children = (
+				11A22BC1242F857700D6FF52 /* LaunchingDetailsIntoProduction.entitlements */,
 				115EAC72242B8B2B00DA8172 /* CollectionView */,
 				11818F7A24274B4D00C54C63 /* Algorithms */,
 				11818F6424274ACA00C54C63 /* AppDelegate.swift */,
@@ -566,7 +568,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LaunchingDetailsIntoProduction/LaunchingDetailsIntoProduction.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = YG4U6S73S9;
 				INFOPLIST_FILE = LaunchingDetailsIntoProduction/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -575,6 +579,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sanyakam.LaunchingDetailsIntoProduction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -584,7 +589,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LaunchingDetailsIntoProduction/LaunchingDetailsIntoProduction.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = YG4U6S73S9;
 				INFOPLIST_FILE = LaunchingDetailsIntoProduction/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -593,6 +600,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sanyakam.LaunchingDetailsIntoProduction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
