@@ -7,27 +7,58 @@
 //
 
 import XCTest
+@testable import LaunchingDetailsIntoProduction
 
 class PetrovSokolycinTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testPetrovSokolycin1() {
+        let items: [Detail] = [
+            .init(1, timeOnMachines: [4, 5]), //the same first item
+            .init(2, timeOnMachines: [4, 1]), //the same first item
+            .init(3, timeOnMachines: [30, 4]),
+            .init(4, timeOnMachines: [6, 30]),
+            .init(5, timeOnMachines: [2, 3]),
+        ]
+        
+        let reorderedItems = PetrovSokolitsyn.PetrovSokolitsyn1(items: items)
+        let numbers = reorderedItems.map( { $0.number } )
+        
+        XCTAssertEqual(numbers, [5, 1, 2, 4, 3])
+//        do i need to use another recomendations for resolve item position?
+//        XCTAssertEqual(numbers, [5, 2, 1, 4, 3])
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testPetrovSokolycin2() {
+        let items: [Detail] = [
+            .init(1, timeOnMachines: [4, 5]),
+            .init(2, timeOnMachines: [4, 1]),
+            .init(3, timeOnMachines: [30, 4]),
+            .init(4, timeOnMachines: [6, 30]),
+            .init(5, timeOnMachines: [2, 3]),
+        ]
+        
+        let reorderedItems = PetrovSokolitsyn.PetrovSokolitsyn2(items: items)
+        let numbers = reorderedItems.map( { $0.number } )
+        
+        XCTAssertEqual(numbers, [4, 1, 3, 5, 2])
     }
+    
+    func testPetrovSokolycin3() {
+        let items: [Detail] = [
+            .init(1, timeOnMachines: [4, 5]), //the same diff
+            .init(2, timeOnMachines: [4, 1]),
+            .init(3, timeOnMachines: [30, 4]),
+            .init(4, timeOnMachines: [6, 30]),
+            .init(5, timeOnMachines: [2, 3]), //the same diff
+        ]
+        
+        let reorderedItems = PetrovSokolitsyn.PetrovSokolitsyn3(items: items)
+        let numbers = reorderedItems.map( { $0.number } )
+        
+        XCTAssertEqual(numbers, [4, 1, 5, 2, 3])
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+//      do i need to use another recomendations for resolve item position?
+//      XCTAssertEqual(numbers, [4, 5, 1, 2, 3])
     }
 
 }

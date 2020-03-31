@@ -149,6 +149,9 @@
 		11818F6324274ACA00C54C63 /* LaunchingDetailsIntoProduction */ = {
 			isa = PBXGroup;
 			children = (
+				11B3BDDC24333B33001D4481 /* New Group2 */,
+				11B3BDDB24333B2E001D4481 /* New Group1 */,
+				11B3BDDA24333B29001D4481 /* New Group */,
 				11A22BC1242F857700D6FF52 /* LaunchingDetailsIntoProduction.entitlements */,
 				115EAC72242B8B2B00DA8172 /* CollectionView */,
 				11818F7A24274B4D00C54C63 /* Algorithms */,
@@ -208,6 +211,27 @@
 				11818FB02428F59900C54C63 /* GanttLayout.swift */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		11B3BDDA24333B29001D4481 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		11B3BDDB24333B2E001D4481 /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		11B3BDDC24333B33001D4481 /* New Group2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group2";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

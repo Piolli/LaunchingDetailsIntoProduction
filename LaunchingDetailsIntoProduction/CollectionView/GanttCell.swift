@@ -19,11 +19,12 @@ class GanttCell: UICollectionViewCell {
         return label
     }()
     
-    func addNumberOfTasks(text: String) {
+    func addNumberOfTasks(text: String, fontSize: CGFloat) {
         contentView.addSubview(numberOfTask)
         numberOfTask.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         numberOfTask.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         numberOfTask.text = text
+        numberOfTask.font = .systemFont(ofSize: fontSize)
         
         contentView.layer.borderColor = UIColor.red.cgColor
         contentView.layer.borderWidth = 2.0

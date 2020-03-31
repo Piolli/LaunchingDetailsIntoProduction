@@ -102,7 +102,7 @@ extension UIGanttCollectionView : UICollectionViewDataSource, UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! GanttCell
         let item = displayingItems[indexPath.row][indexPath.section]
         cell.backgroundColor = item.color
-        cell.addNumberOfTasks(text: "\(item.number), \(item.timeOnMachines[indexPath.row])")
+        cell.addNumberOfTasks(text: "\(item.number), \(item.timeOnMachines[indexPath.row])", fontSize: zoomValue * 22)
         return cell
     }
     
