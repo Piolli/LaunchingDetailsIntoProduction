@@ -27,7 +27,7 @@ class GanttCell: UICollectionViewCell {
         numberOfTask.font = .systemFont(ofSize: fontSize)
         
         contentView.layer.borderColor = UIColor.red.cgColor
-        contentView.layer.borderWidth = 2.0
+        contentView.layer.borderWidth = 1.0
     }
     
 }

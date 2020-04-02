@@ -15,24 +15,26 @@ struct MainScreenView: View {
     @State private var selectedAlgorithmIndex: Int = 0
     @State private var zoomValue: Float = 1
     @State private var lenghtOfProductionLine: CGFloat = 0
-    @State private var items: [Detail] = [
-        .init(1, timeOnMachines: [4, 5]),
-        .init(2, timeOnMachines: [4, 1]),
-        .init(3, timeOnMachines: [30, 4]),
-        .init(4, timeOnMachines: [6, 30]),
-        .init(5, timeOnMachines: [2, 3]),
-    ]
+    @State private var items: [Detail] = []
+    @State private var filePath: String = ""
+    @State private var isShowingAlert = false
     
     var body: some View {
         VStack(spacing: 0) {
             HStack() {
+                TextField("Enter file path", text: $filePath)
+                
                 Button.init("Load data from file") {
-                    
-                }.padding()
+
+                }.alert(isPresented: $isShowingAlert) {
+                    Alert(title: Text("I/O Error!"), message: Text("Invalid file path!"), dismissButton: .default(Text("Close")))
+                }
+                .padding()
                 
                 Button.init("Load default data") {
-                    
+                    self.items = DataLoader.sharedInstance.parse(string: DataLoader.sampleFileData)
                 }.padding()
+                
             }.frame(alignment: .center)
             
             
@@ -56,7 +58,7 @@ struct MainScreenView: View {
                     Slider(value: $zoomValue, in: (0.2)...3)
                 }.padding()
                 
-                Text("Длина цикла: \(lenghtOfProductionLine)")
+                Text("Длина цикла: \(Int(lenghtOfProductionLine))")
             }
             
             GanttCollectionView(items: $items, zoomValue: $zoomValue, algorithmIndex: $selectedAlgorithmIndex) { length in

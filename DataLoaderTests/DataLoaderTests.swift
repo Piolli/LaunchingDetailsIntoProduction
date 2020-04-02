@@ -37,6 +37,24 @@ class DataLoaderTests: XCTestCase {
         
         XCTAssertEqual(details, expectedDetails)
     }
+    
+    func test_loadFromSampleData_success() {
+        let expectedDetails: [Detail] = [
+            .init(1, timeOnMachines: [4, 5]),
+            .init(2, timeOnMachines: [4, 1]),
+            .init(3, timeOnMachines: [30, 4]),
+            .init(4, timeOnMachines: [6, 30]),
+            .init(5, timeOnMachines: [2, 3]),
+        ]
+        
+        let sampleFileData = DataLoader.sampleFileData
+        
+        
+        let details = loader.parse(string: sampleFileData)
+        XCTAssertEqual(details.count, 5)
+        print("DETAILS", details)
+        XCTAssertEqual(details, expectedDetails)
+    }
 
 
 }

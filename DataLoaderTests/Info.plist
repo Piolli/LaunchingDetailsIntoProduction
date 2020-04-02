@@ -16,6 +16,14 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>NSFileProviderDomainUsageDescription</key>
+	<string>Need</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>Need</string>
+	<key>NSDesktopFolderUsageDescription</key>
+	<string>Need</string>
+	<key>NSExtensionFileProviderSupportsEnumeration</key>
+	<true/>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 </dict>

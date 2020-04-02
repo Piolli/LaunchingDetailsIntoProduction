@@ -13,6 +13,7 @@ class UIGanttCollectionView: UICollectionView {
     typealias Algorithm = ([Detail]) -> [Detail]
     
     private let cellIdentifier = "ganttCell"
+    private let headerIdentifier = "ganttHeader"
     private var displayingItems: [[Detail]] = []
     
     var ganttLayout: GanttLayout!
@@ -46,6 +47,8 @@ class UIGanttCollectionView: UICollectionView {
 
         register(GanttCell.self, forCellWithReuseIdentifier: cellIdentifier)
         ganttLayout = GanttLayout(items: displayingItems)
+        ganttLayout.register(GanttHeaderView.self, forDecorationViewOfKind: GanttLayout.headerDecorationIdentifier)
+        
         self.items = items
         
         setCollectionViewLayout(ganttLayout, animated: true)
@@ -94,6 +97,7 @@ class UIGanttCollectionView: UICollectionView {
 }
 
 extension UIGanttCollectionView : UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
@@ -113,4 +117,5 @@ extension UIGanttCollectionView : UICollectionViewDataSource, UICollectionViewDe
             return 0
         }
     }
+    
 }

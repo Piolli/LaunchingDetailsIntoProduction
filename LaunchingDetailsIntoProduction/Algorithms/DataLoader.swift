@@ -12,6 +12,15 @@ import UIKit
 /// Loads and parses file' data into `Detail` struct
 class DataLoader {
     
+    static let sampleFileData =
+    """
+    4 5
+    4 1
+    30 4
+    6 30
+    2 3
+    """
+    
     public static let sharedInstance = DataLoader()
     
     private init() { }

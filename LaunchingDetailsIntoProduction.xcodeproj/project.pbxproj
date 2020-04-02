@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111F12782435E45A00D5475F /* GanttHeaderViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F12772435E45A00D5475F /* GanttHeaderViewLayoutAttributes.swift */; };
 		114D4BA4242B314C009C58C4 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D4BA3242B314C009C58C4 /* MainScreenView.swift */; };
 		115EAC6D242B452B00DA8172 /* GanttCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115EAC6C242B452B00DA8172 /* GanttCollectionView.swift */; };
 		115EAC6F242B467000DA8172 /* UIGanttCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115EAC6E242B467000DA8172 /* UIGanttCollectionView.swift */; };
 		115EAC71242B8A8400DA8172 /* GanttCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115EAC70242B8A8400DA8172 /* GanttCell.swift */; };
+		11773DA52434C107001A0D2C /* GanttHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11773DA42434C107001A0D2C /* GanttHeaderView.swift */; };
 		11818F6524274ACA00C54C63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F6424274ACA00C54C63 /* AppDelegate.swift */; };
 		11818F6724274ACA00C54C63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F6624274ACA00C54C63 /* SceneDelegate.swift */; };
 		11818F6924274ACA00C54C63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11818F6824274ACA00C54C63 /* ViewController.swift */; };
@@ -52,10 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		111F12772435E45A00D5475F /* GanttHeaderViewLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttHeaderViewLayoutAttributes.swift; sourceTree = "<group>"; };
 		114D4BA3242B314C009C58C4 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainScreenView.swift; path = Algorithms/MainScreenView.swift; sourceTree = "<group>"; };
 		115EAC6C242B452B00DA8172 /* GanttCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttCollectionView.swift; sourceTree = "<group>"; };
 		115EAC6E242B467000DA8172 /* UIGanttCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGanttCollectionView.swift; sourceTree = "<group>"; };
 		115EAC70242B8A8400DA8172 /* GanttCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttCell.swift; sourceTree = "<group>"; };
+		11773DA42434C107001A0D2C /* GanttHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttHeaderView.swift; sourceTree = "<group>"; };
 		11818F6124274ACA00C54C63 /* LaunchingDetailsIntoProduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchingDetailsIntoProduction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11818F6424274ACA00C54C63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11818F6624274ACA00C54C63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,9 +117,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		111F12762435E3FA00D5475F /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				11773DA42434C107001A0D2C /* GanttHeaderView.swift */,
+				111F12772435E45A00D5475F /* GanttHeaderViewLayoutAttributes.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		115EAC72242B8B2B00DA8172 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				111F12762435E3FA00D5475F /* Header */,
 				115EAC6C242B452B00DA8172 /* GanttCollectionView.swift */,
 				115EAC6E242B467000DA8172 /* UIGanttCollectionView.swift */,
 				115EAC70242B8A8400DA8172 /* GanttCell.swift */,
@@ -149,9 +163,6 @@
 		11818F6324274ACA00C54C63 /* LaunchingDetailsIntoProduction */ = {
 			isa = PBXGroup;
 			children = (
-				11B3BDDC24333B33001D4481 /* New Group2 */,
-				11B3BDDB24333B2E001D4481 /* New Group1 */,
-				11B3BDDA24333B29001D4481 /* New Group */,
 				11A22BC1242F857700D6FF52 /* LaunchingDetailsIntoProduction.entitlements */,
 				115EAC72242B8B2B00DA8172 /* CollectionView */,
 				11818F7A24274B4D00C54C63 /* Algorithms */,
@@ -211,27 +222,6 @@
 				11818FB02428F59900C54C63 /* GanttLayout.swift */,
 			);
 			path = Layout;
-			sourceTree = "<group>";
-		};
-		11B3BDDA24333B29001D4481 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		11B3BDDB24333B2E001D4481 /* New Group1 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group1";
-			sourceTree = "<group>";
-		};
-		11B3BDDC24333B33001D4481 /* New Group2 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group2";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,8 +395,10 @@
 				11818F9024274DDE00C54C63 /* Detail.swift in Sources */,
 				11818F6724274ACA00C54C63 /* SceneDelegate.swift in Sources */,
 				115EAC6F242B467000DA8172 /* UIGanttCollectionView.swift in Sources */,
+				11773DA52434C107001A0D2C /* GanttHeaderView.swift in Sources */,
 				11818F7C24274B6F00C54C63 /* Johnson.swift in Sources */,
 				11818F7E24274B8200C54C63 /* PetrovSokolitsyn.swift in Sources */,
+				111F12782435E45A00D5475F /* GanttHeaderViewLayoutAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
