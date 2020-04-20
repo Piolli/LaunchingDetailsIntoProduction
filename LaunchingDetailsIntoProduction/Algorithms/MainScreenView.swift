@@ -25,7 +25,7 @@ struct MainScreenView: View {
                 TextField("Enter file path", text: $filePath)
                 
                 Button.init("Load data from file") {
-
+                    self.items = DataLoader.sharedInstance.parse(string: DataLoader.sharedInstance.readAll(file: self.filePath)!)
                 }.alert(isPresented: $isShowingAlert) {
                     Alert(title: Text("I/O Error!"), message: Text("Invalid file path!"), dismissButton: .default(Text("Close")))
                 }

@@ -14,11 +14,11 @@ class DataLoader {
     
     static let sampleFileData =
     """
-    4 5
-    4 1
-    30 4
-    6 30
-    2 3
+    4 5 1
+    4 1 2
+    30 4 3
+    6 30 4
+    2 3 5
     """
     
     public static let sharedInstance = DataLoader()

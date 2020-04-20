@@ -24,6 +24,7 @@ let reorderingAlgorithms: [UIGanttCollectionView.Algorithm] = [
 class GanttLayout: UICollectionViewLayout {
 
     public static let headerDecorationIdentifier = "headerDecoration"
+    public static let leadingDecorationIdentifier = "leadingDecoration"
     
     enum DefaultLayoutMetrics {
         static var timeHeaderHeight = CGFloat(50)
@@ -86,7 +87,7 @@ class GanttLayout: UICollectionViewLayout {
 
         var yOffsets: [CGFloat] = [layoutMetrics.timeHeaderHeight]
         for row in 1..<items.count {
-            yOffsets.append(CGFloat(row) * layoutMetrics.rowHeight + yOffsets[row-1])
+            yOffsets.append(layoutMetrics.rowHeight + yOffsets[row-1])
         }
         
         var xoffsets: [CGFloat] = Array.init(repeating: 0, count: items.count)
@@ -126,7 +127,8 @@ class GanttLayout: UICollectionViewLayout {
                 let newItem = items[rowIndex][itemInRowIndex]
                 xoffsets[rowIndex] += newItem.leftOffset * layoutMetrics.cellWidth
                 
-                let frame = CGRect(x: xoffsets[rowIndex], y: yOffsets[rowIndex], width: itemWidth, height: layoutMetrics.rowHeight)
+                // + layoutMetrics.cellWidth – additional leading decoration view
+                let frame = CGRect(x: xoffsets[rowIndex] + layoutMetrics.cellWidth, y: yOffsets[rowIndex], width: itemWidth, height: layoutMetrics.rowHeight)
                 itemAttrs.frame = frame
                 cache[indexPath] = itemAttrs
                 
@@ -152,7 +154,7 @@ class GanttLayout: UICollectionViewLayout {
         }
 
         let width = lengthOfProductionLine * layoutMetrics.cellWidth
-        let itemsCount = collectionView!.numberOfItems(inSection: 0)
+        let itemsCount = items.count
         let height = layoutMetrics.timeHeaderHeight + (layoutMetrics.rowHeight * CGFloat(itemsCount))
         
         return .init(width: width, height: height)
@@ -174,6 +176,12 @@ class GanttLayout: UICollectionViewLayout {
             }
         }
         
+        if let d = layoutAttributesForDecorationView(ofKind: GanttLayout.leadingDecorationIdentifier, at: IndexPath(row: 0, section: 0)) {
+            if rect.intersects(d.frame) {
+                atts.append(d)
+            }
+        }
+        
         for (_, layoutAttrs) in cache {
             if rect.intersects(layoutAttrs.frame) {
                 atts.append(layoutAttrs)
@@ -186,9 +194,19 @@ class GanttLayout: UICollectionViewLayout {
     override func layoutAttributesForDecorationView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         if elementKind == GanttLayout.headerDecorationIdentifier {
             let attr = GanttHeaderViewLayoutAttributes(forDecorationViewOfKind: GanttLayout.headerDecorationIdentifier, with: indexPath)
-            attr.frame = .init(x: 0, y: 0, width: collectionViewContentSize.width, height: layoutMetrics.timeHeaderHeight)
+            attr.frame = .init(x: layoutMetrics.cellWidth, y: 0, width: collectionViewContentSize.width, height: layoutMetrics.timeHeaderHeight)
             attr.zoomValue = layoutMetrics.zoomValue
             attr.zIndex = 1
+            return attr
+        }
+        else if elementKind == GanttLayout.leadingDecorationIdentifier {
+            let attr = GanttHeaderViewLayoutAttributes(forDecorationViewOfKind: GanttLayout.leadingDecorationIdentifier, with: indexPath)
+            attr.frame = .init(x: 0, y: 0, width: layoutMetrics.cellWidth, height: collectionViewContentSize.height)
+            attr.zoomValue = layoutMetrics.zoomValue
+            attr.zIndex = 1
+            attr.countOfCells = items.count
+            attr.rowHeight = layoutMetrics.rowHeight
+            attr.topOffset = layoutMetrics.timeHeaderHeight
             return attr
         }
         return nil

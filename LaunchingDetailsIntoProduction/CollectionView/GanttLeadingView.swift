@@ -1,21 +1,22 @@
 //
-//  GanttHeaderView.swift
+//  GanttLeadingView.swift
 //  LaunchingDetailsIntoProduction
 //
-//  Created by Александр Камышев on 01.04.2020.
+//  Created by Александр Камышев on 02.04.2020.
 //  Copyright © 2020 Александр Камышев. All rights reserved.
 //
 
 import Foundation
-
 import UIKit
 
-class GanttHeaderView : UICollectionReusableView {
+class GanttLeadingView: UICollectionReusableView {
     
     var zoomValue = CGFloat(0)
     var cellWidth = CGFloat(0)
-    let defaultFontSize = CGFloat(12)
+    let defaultFontSize = CGFloat(14)
     var scaledFontSize = CGFloat(0)
+    var rowHeight = CGFloat(75)
+    var topOffset = CGFloat(0)
     
     var countOfCells = 0 {
         willSet {
@@ -45,9 +46,11 @@ class GanttHeaderView : UICollectionReusableView {
             label.removeFromSuperview()
         }
         labels.removeAll()
-        
+        var yOffset = topOffset
         for i in 0..<countOfLabels {
-            let label = UILabel(frame: CGRect(x: cellWidth * CGFloat(i), y: 0, width: cellWidth, height: frame.size.height))
+            let label = UILabel()
+            label.frame = CGRect(x: 0, y: yOffset, width: cellWidth, height: rowHeight)
+            yOffset += rowHeight
             label.translatesAutoresizingMaskIntoConstraints = false
             label.text = "\(i+1)"
             label.textAlignment = .center
@@ -65,9 +68,11 @@ class GanttHeaderView : UICollectionReusableView {
             return
         }
         
+        var yOffset = topOffset
         for i in 0..<countOfCells {
             let label = labels[i]
-            label.frame = CGRect(x: cellWidth * CGFloat(i), y: 0, width: cellWidth, height: frame.size.height)
+            label.frame = CGRect(x: 0, y: yOffset, width: cellWidth, height: rowHeight)
+            yOffset += rowHeight
             label.font = .systemFont(ofSize: scaledFontSize)
         }
         
@@ -78,11 +83,9 @@ class GanttHeaderView : UICollectionReusableView {
             zoomValue = attrs.zoomValue
             cellWidth = GanttLayout.DefaultLayoutMetrics.cellWidth * zoomValue
             scaledFontSize = defaultFontSize * zoomValue
-            if cellWidth != 0 {
-                countOfCells = Int(frame.size.width/cellWidth)
-            } else {
-                print("cellWidth = 0!")
-            }
+            rowHeight = attrs.rowHeight
+            countOfCells = attrs.countOfCells
+            topOffset = attrs.topOffset
         }
     }
     

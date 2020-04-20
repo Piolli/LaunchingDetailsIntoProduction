@@ -49,6 +49,8 @@ class UIGanttCollectionView: UICollectionView {
         ganttLayout = GanttLayout(items: displayingItems)
         ganttLayout.register(GanttHeaderView.self, forDecorationViewOfKind: GanttLayout.headerDecorationIdentifier)
         
+        ganttLayout.register(GanttLeadingView.self, forDecorationViewOfKind: GanttLayout.leadingDecorationIdentifier)
+        
         self.items = items
         
         setCollectionViewLayout(ganttLayout, animated: true)
